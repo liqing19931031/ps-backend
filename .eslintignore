@@ -1,0 +1,7 @@
+/build/
+/config/
+/dist/
+/src/utils/
+/src/store/
+/src/components/
+/*.js
