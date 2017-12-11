@@ -1,6 +1,7 @@
 # 基于Vue2.0 + webpack2.4 定制的后台模板 集成了大部分的后台功能
   开发者： 李大王
 ## Build Setup
+## 基于node2.4 + 环境
 
 ``` bash
 # 安装依赖
@@ -14,6 +15,7 @@ npm run build
 ```
 
 ########### 目录结构描述 （开发者只需要动src文件夹底下的东西）
+```
 ├── Readme.md                   // help
 ├── api                         // 所有的接口api
 ├── utils                       // 公共方法依赖
@@ -33,3 +35,4 @@ npm run build
 │   ├── glyphicon               // 字体图标
 │   └── getters                 // 获取全局数据的方法
 └── tools
+```
