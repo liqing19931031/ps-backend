@@ -28,25 +28,6 @@
       <el-form-item label="图片上传">
         <img-upload :imgFile='form' :imgRule='imgRule'></img-upload>
       </el-form-item>
-      <!-- <el-form-item label="级联选择">
-        <el-col :span="4">
-          <el-select v-model="form.provinceId" placeholder="请选择">
-            <el-option :label='item.name' :value='item.id' v-for='(item, index) in provinceList'></el-option>
-          </el-select>
-        </el-col>
-        <el-col :span="1" class="text-center">-</el-col>
-        <el-col :span="4">
-          <el-select v-model="form.cityId" placeholder="请选择">
-            <el-option :label='item.name' :value='item.id' v-for='(item, index) in cityList'></el-option>
-          </el-select>
-        </el-col>
-        <el-col :span="1" class="text-center">-</el-col>
-        <el-col :span="4">
-          <el-select v-model="form.areaId" placeholder="请选择">
-            <el-option :label='item.name' :value='item.id' v-for='(item, index) in areaList'></el-option>
-          </el-select>
-        </el-col>
-      </el-form-item> -->
       <el-form-item label="活动性质">
         <el-checkbox-group v-model="form.type">
           <el-checkbox :label='1' name="type">美食/餐厅线上活动</el-checkbox>
@@ -89,9 +70,9 @@ export default {
     return {
       form: {
         area: [
-          1,
-          110100,
-          110101
+          0,
+          110000,
+          110100
         ],
         pic: '',
         title: '',
@@ -102,10 +83,7 @@ export default {
         show: false,
         type: [],
         radio: 1,
-        desc: '',
-        provinceId: '',
-        cityId: '',
-        areaId: ''
+        desc: ''
       },
       imgRule: {
         ratio: 1,

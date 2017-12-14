@@ -3,13 +3,13 @@
 	<div style="position:relative">
 		<div class="img-body">
 			<div class="down-load">
-                <input type="file" accept="image/jpeg" class='form-control' @change='picUpload' ref="input" id="img">
-                <i class="glyphicon glyphicon-download text-primary"></i>
-                <div class="text-center" style="font-size: 12px;color: #333">
-                    <div>点击上传图片</div>
-                </div>
-                <img :src="src" ref="img">
-            </div>
+	        <input type="file" accept="image/jpeg" class='form-control' @change='picUpload' ref="input" id="img">
+	        <i class="glyphicon glyphicon-download text-primary"></i>
+	        <div class="text-center" style="font-size: 12px;color: #333">
+	            <div>点击上传图片</div>
+	        </div>
+	        <img :src="src" ref="img">
+	    </div>
 		</div>
 		<div v-if='IMGNAME !== ""'>{{IMGNAME}} <i class="glyphicon glyphicon-success text-success"></i>添加成功</div>
 	</div>
@@ -27,7 +27,7 @@
     },
 		data () {
 			return {
-				src: '',
+				src: '../static/normal.png',
 				IMGNAME: ''
 			}
 		},
@@ -42,17 +42,17 @@
 		            this.$set(this, 'src', src)
 		            image.onload = () => {
 		                if (image.width / image.height !== +this.imgRule.ratio || $img.size > (+this.imgRule.size * 1024)) { // 图片尺寸限制
-		                    // this.showAlert({
-		                    //     message: '图片尺寸有误,请重新上传尺寸比例为1:1的图片',
-		                    //     type: 'danger'
-		                    // })
-		                    // this.showAlert({
-	                        //     message: '图片大小不能超过300k',
-	                        //     type: 'danger'
-	                        // })
+	                    this.showAlert({
+	                        message: '图片尺寸有误,请重新上传尺寸比例为1:1的图片',
+	                        type: 'danger'
+	                    })
+	                    this.showAlert({
+                            message: '图片大小不能超过300k',
+                            type: 'danger'
+                        })
 		                } else { // 图片大小限制
-	                        this.$set(this, 'IMGNAME', $img.name)
-	                        this.$set(this.imgFile, 'pic', $img)
+                      this.$set(this, 'IMGNAME', $img.name)
+                    	this.$set(this.imgFile, 'pic', $img)
 		                }
 		            }
 		        }
@@ -66,39 +66,41 @@
 
 <style lang='less'>
 .img-body{
-    border:1px dashed #ddd;
+    border:1px dashed #333;
     width: 180px;
     height: 180px;
-    border-radius: 8px;
+    border-radius: 15px;
     background-color: #fbfbfc;
     .down-load{
     	width: 100%;
     	height: 100%;
-        text-align: center;
-        font-size: 80px;
-        overflow: hidden;
-        color: #333;
-        position: relative;
-        img{
-            left: 0;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            display: block;
-            position: absolute;
-            div{
-            	border-style: none;
-            }
-        }
-        input[type="file"]{
-        	display: inline-block;
-        	width: 80px;
-            cursor: pointer;
-            height: 80px;
-            opacity: 0;
-            z-index: 2;
-            position: absolute;
-        }
+      text-align: center;
+      font-size: 80px;
+      overflow: hidden;
+      color: #333;
+      position: relative;
+			i{
+				margin-top: 40px;
+				color: #409EFF;
+			}
+      img{
+          left: 0;
+          width: 100%;
+          height: 100%;
+          top: 0;
+					border-style: none;
+          display: block;
+          position: absolute;
+      }
+      input[type="file"]{
+      	display: inline-block;
+      	width: 80px;
+          cursor: pointer;
+          height: 80px;
+          opacity: 0;
+          z-index: 2;
+          position: absolute;
+      }
     }
     .text-line{
         padding: 10px 20px;

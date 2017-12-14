@@ -6,6 +6,7 @@ const _import = require('./_import_' + process.env.NODE_ENV + '.js') // 加载�
 Vue.use(Router)
 
 export const constantRouterMap = [ // 公共路由
+  { path: '', redirect: 'login' },
   { path: '/login', component: _import('login/login'), hidden: true }, // huidden 用来表示是否显示在左侧主导航上
   { path: '',
     component: Layout,

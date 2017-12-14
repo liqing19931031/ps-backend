@@ -54,7 +54,7 @@ export default {
     fetchData () {
       this.listLoading = true
       getarticleList().then(response => {
-        this.list = response.data.result
+        this.list = response.result
         this.listLoading = false
       })
     },
