@@ -38,8 +38,21 @@ export const constantRouterMap = [ // 公共路由
       icon: 'article'
     },
     children: [
-      { path: 'articleAdd', component: _import('article/article-form'), name: 'articleAdd', meta: {name: 'articleAdd', title: '文章添加'} },
-      { path: 'articleList', component: _import('article/article-list'), name: 'articleList', meta: {name: 'articleList', title: '文章列表'} }
+      { path: 'articleAdd', component: _import('article/article-form'), name: 'articleAdd', meta: {name: 'articleAdd', title: '文章添加', icon: 'add'} },
+      { path: 'articleList', component: _import('article/article-list'), name: 'articleList', meta: {name: 'articleList', title: '文章列表', icon: 'list'} }
+    ]
+  },
+  {
+    path: '/wechat',
+    component: Layout,
+    redirect: 'noredirect',
+    meta: {
+      title: '小程序',
+      icon: 'wechat'
+    },
+    children: [
+      { path: 'wechatAdd', component: _import('wechat/wechat-form'), name: 'wechatAdd', meta: {name: 'wechatAdd', title: '小程序添加', icon: 'add'} },
+      { path: 'wechatList', component: _import('wechat/wechat-list'), name: 'wechatList', meta: {name: 'wechatList', title: '小程序列表', icon: 'list'} }
     ]
   }
 ]

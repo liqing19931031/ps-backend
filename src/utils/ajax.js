@@ -23,7 +23,7 @@ let params = function (data) { // 序列化请求参数 (目前只能应用一�
 let ajax = function (obj, baseUrl) {
 	return new Promise(function (resolve, reject) { // 返回promise 对象实例 并接受resolve 和reject 两个参数
 		let xhr = createXHR()
-		obj.url = baseUrl + obj.url //  + '?rand=' + Math.random()
+		obj.url = obj.url.indexOf('http') === 0 ? obj.url : baseUrl + obj.url //  + '?rand=' + Math.random()
 		obj.data = params(obj.data)
 		if (obj.method === 'get') {
       obj.url += obj.url.indexOf('?') === -1 ? '?' + obj.data : '&' + obj.data

@@ -22,7 +22,6 @@ export default {
   },
   computed: {
     sidebar () {
-      console.log(this.$store.state)
       return this.$store.state.routerTree.sidebar
     }
   }
